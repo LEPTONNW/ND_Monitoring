@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>헤더</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery CDN -->
+
+    <!-- 구글 웹폰트 적용 -->
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+</head>
+<body>
+<div th:fragment="header">
+    <div class="mainheader">
+        <div class="d-flex justify-content-center">
+            <a th:href="@{/}" class="m_title">
+                <span class="s1"
+                      style="text-shadow: 1px 1px 1px black;"
+                >테스트페이지</span>
+            </a>
+        </div>
+        <br>
+        <div class="d-flex justify-content-center">
+            <a th:href="@{/login}" style="background-color: grey; color: black"
+               onmouseover="this.style.backgroundColor='black'; this.style.color='white';"
+               onmouseout="this.style.backgroundColor='grey'; this.style.color='black'"
+               sec:authorize="isAnonymous()"
+               class="btn btn-default lo_btn">로그인</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a th:href="@{/login}" style="background-color: grey; color: black"
+               onmouseover="this.style.backgroundColor='black'; this.style.color='white';"
+               onmouseout="this.style.backgroundColor='grey'; this.style.color='black'"
+               sec:authorize="isAnonymous()"
+               class="btn btn-default lo_btn">회원가입</a>
+
+            <span class="s1"style="color:hotpink; font-size: 20px;" th:text="'환영합니다' + ' ' + ${#authentication.name} + ' 님'" sec:authorize="isAuthenticated()"></span>
+            <input type="hidden" id="userid" th:value="${#authentication.name}">
+        </div>
+        <br>
+        <div  class="d-flex justify-content-center">
+            <a th:href="@{/logout}" style="background-color: grey; color: black"
+               onmouseover="this.style.backgroundColor='black'; this.style.color='white';"
+               onmouseout="this.style.backgroundColor='grey'; this.style.color='black'"
+               sec:authorize="isAuthenticated()"
+               class="btn btn-default lo_btn">로 그 아 웃</a>
+            &nbsp;&nbsp;&nbsp;
+            <a th:href="@{/users/mypage_chk}" style="background-color: grey; color: black"
+               onmouseover="this.style.backgroundColor='black'; this.style.color='white';"
+               onmouseout="this.style.backgroundColor='grey'; this.style.color='black'"
+               sec:authorize="isAuthenticated()"
+               class="btn btn-default lo_btn">마이페이지</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

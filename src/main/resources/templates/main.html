@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorate="~{layouts/layout.html}">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery CDN -->
+    <!-- 구글 웹폰트 적용 -->
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+    <link th:href="@{/css/mainpage.css}" rel="stylesheet">
+    <!--
+    <meta name="viewport" content="width=1024">
+    -->
+    <title>메인페이지</title>
+</head>
+<body>
+<!-- 메인화면 컨텐츠 -->
+<div class="content" layout:fragment="content">
+    <div class="container">
+        <div class="weather_info">
+            <div class="d-flex justify-content-center">
+                <span><h1>날씨 정보</h1></span>
+            </div>
+        </div>
+
+        <div class="weather_info">
+            <div class="d-flex justify-content-center">
+                <span><h1>정보 요약</h1></span>
+            </div>
+        </div>
+
+        <div class="weather_info">
+            <div class="d-flex justify-content-center">
+                <span><h1>안 내</h1></span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+.mainheader {
+    border: 1px solid black;
+    width: 80%;
+    height: 200px;
+    float: right;
+    position: absolute;
+    margin-left: 20%;
+    background-color: red;
+
+}
