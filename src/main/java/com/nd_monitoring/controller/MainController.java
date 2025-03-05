@@ -18,4 +18,8 @@ public class MainController {
     public String home() {
         return "main";
     }
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
 }
