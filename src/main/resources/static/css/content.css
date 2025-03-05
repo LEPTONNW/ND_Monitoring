@@ -1,10 +1,9 @@
-.container {
+.content {
+    width: calc(100vw - 20vw);
     position: absolute;
     border: 1px solid black;
     margin-top: 210px;
     background: #6c757d;
-    margin-left: 21%;
-
-    height: 100%;
-    min-height: 1300px;
+    margin-left: 20%;
+    height: calc(100vh - 200px);
 }

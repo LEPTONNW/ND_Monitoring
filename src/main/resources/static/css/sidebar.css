@@ -1,8 +1,5 @@
-.side {
-
-    width: 20%;
-    height: 100%;
-    min-height: 1500px;
-    background: grey;
+.sidebar {
+    width: 20vw;
+    height: 100vh;
     border: 1px solid black;
 }
