@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
+
+}
+
+.login-btn {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    padding: 0.75rem;
+}
+.login-btn:hover {
+    background-color: grey;
+}
+.forgot-password,
+.signup {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+.forgot-password:hover,
+.signup:hover {
+    text-decoration: underline;
+}
