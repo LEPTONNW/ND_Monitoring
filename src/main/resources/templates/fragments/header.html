@@ -5,54 +5,40 @@
 <head>
     <meta charset="UTF-8">
     <title>헤더</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery CDN -->
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- 구글 웹폰트 적용 -->
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <div th:fragment="header">
     <div class="mainheader">
-        <div class="d-flex justify-content-center">
-            <a th:href="@{/}" class="m_title">
-                <span class="s1"
-                      style="text-shadow: 1px 1px 1px black;"
-                >테스트페이지</span>
-            </a>
+        <div class="d-flex justify-content-center head_img">
+            <div class="test_img">
+                <div class="d-flex justify-content-center">
+                    <a th:href="@{/}"><img alt="Erorr : 서버오류" th:src="@{/img/logo.png}" width="100%;" height="100%;"></a>
+                </div>
+            </div>
         </div>
-        <br>
-        <div class="d-flex justify-content-center">
-            <a th:href="@{/login}" style="background-color: grey; color: black"
-               onmouseover="this.style.backgroundColor='black'; this.style.color='white';"
-               onmouseout="this.style.backgroundColor='grey'; this.style.color='black'"
-               sec:authorize="isAnonymous()"
-               class="btn btn-default lo_btn">로그인</a>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <a th:href="@{/login}" style="background-color: grey; color: black"
-               onmouseover="this.style.backgroundColor='black'; this.style.color='white';"
-               onmouseout="this.style.backgroundColor='grey'; this.style.color='black'"
-               sec:authorize="isAnonymous()"
-               class="btn btn-default lo_btn">회원가입</a>
 
-            <span class="s1"style="color:hotpink; font-size: 20px;" th:text="'환영합니다' + ' ' + ${#authentication.name} + ' 님'" sec:authorize="isAuthenticated()"></span>
-            <input type="hidden" id="userid" th:value="${#authentication.name}">
+        <div class="d-flex menu_sidebar">
+            <button id="toggleSidebar" class="btn btn-default menu_btn"><i style="font-size: 40px; color:white; font-weight: bold;" class="bi bi-list"></i></button>
+
+            <div class="d-flex justify-content-end head_text">
+                <span class="welcome_text" style="margin-right: 10px;" th:text="'환영합니다' + ' ' + ${#authentication.name} + ' 님'" sec:authorize="isAuthenticated()">
+                   <a th:href="@{/logout}" sec:authorize="isAuthenticated()"
+                      onmouseover="this.style.backgroundColor='#252525'; this.style.color='white';"
+                      onmouseout="this.style.backgroundColor='white'; this.style.color='#252525'"
+                      class="btn btn-default lo_btn">로그아웃</a>
+                </span>
+            </div>
+
         </div>
-        <br>
-        <div  class="d-flex justify-content-center">
-            <a th:href="@{/logout}" style="background-color: grey; color: black"
-               onmouseover="this.style.backgroundColor='black'; this.style.color='white';"
-               onmouseout="this.style.backgroundColor='grey'; this.style.color='black'"
-               sec:authorize="isAuthenticated()"
-               class="btn btn-default lo_btn">로 그 아 웃</a>
-            &nbsp;&nbsp;&nbsp;
-            <a th:href="@{/users/mypage_chk}" style="background-color: grey; color: black"
-               onmouseover="this.style.backgroundColor='black'; this.style.color='white';"
-               onmouseout="this.style.backgroundColor='grey'; this.style.color='black'"
-               sec:authorize="isAuthenticated()"
-               class="btn btn-default lo_btn">마이페이지</a>
-        </div>
+
     </div>
 </div>
 </body>
