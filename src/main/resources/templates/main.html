@@ -5,36 +5,72 @@
       layout:decorate="~{layouts/layout.html}">
 <head>
     <meta charset="UTF-8">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery CDN -->
-
-    <link th:href="@{/css/mainpage.css}" rel="stylesheet">
-    <!--
-    <meta name="viewport" content="width=1024">
-    -->
     <title>메인페이지</title>
 </head>
 <body>
-<!-- 메인화면 컨텐츠 -->
-<div class="content" layout:fragment="content">
-    <div class="container">
-        <div class="weather_info">
-            <div class="d-flex justify-content-center">
-                <span><h1>날씨 정보</h1></span>
-            </div>
-        </div>
+<div class="content mt-4" layout:fragment="content">
+    <div class="container mt-4" style="margin-left: 150px">
+        <div class="row">
+            <!-- 왼쪽 영역 -->
+            <div class="col-md-6 mainL">
+                <h3>실시간 사업소 현황</h3>
+               <div class="row alarmMainBox">
+                   <div class="alarm-box justify-content-start">
+                       <span>금일 날씨 문제 예상 사업소</span><span class="num">00</span>
+                   </div>
+                   <div class="alarm-box justify-content-start">
+                       <span>현재 사업소별 이상발생 </span><span class="num">00</span>
+                   </div>
+                   <div class="alarm-box justify-content-start">
+                       <span>금일 날씨 문제 사업소</span><span class="num">00</span>
+                   </div>
+                   <div class="alarm-box justify-content-start">
+                       <span>금일 날씨 문제 사업소</span><span class="num">00</span>
+                   </div>
+               </div>
+               <div class="row errorListBox">
+                   <div class="d-flex justify-content-between align-items-center">
+                       <h3>미확인 오류 리스트 확인</h3>
+                       <i class="bi bi-plus-square"></i>
+                   </div>
+                   <table class="errorInBox">
 
-        <div class="weather_info">
-            <div class="d-flex justify-content-center">
-                <span><h1>정보 요약</h1></span>
+                       <tr>
+                           <td>번호</td>
+                           <td>사업소명(지역)</td>
+                           <td>오류 발생 시간</td>
+                       </tr>
+                       <tr>
+                           <td>testNum01</td>
+                           <td><a href="#">testPlace01</a></td>
+                           <td>testTime01</td>
+                       </tr>
+                       <tr>
+                           <td>testNum02</td>
+                           <td><a href="#">testPlace02</a></td>
+                           <td>testTime02</td>
+                       </tr>
+                       <tr>
+                           <td>testNum03</td>
+                           <td><a href="#">testPlace03</a></td>
+                           <td>testTime03</td>
+                       </tr>
+                       <tr>
+                           <td>testNum04</td>
+                           <td><a href="#">testPlace04</a></td>
+                           <td>testTime04</td>
+                       </tr>
+                   </table>
+               </div>
             </div>
-        </div>
-
-        <div class="weather_info">
-            <div class="d-flex justify-content-center">
-                <span><h1>안 내</h1></span>
+            <!-- 오른쪽 영역 -->
+            <div class="col-md-6 mainR d-flex justify-content-end align-items-start">
+                <div>
+                </div>
             </div>
         </div>
     </div>
+
 </div>
 </body>
 </html>
