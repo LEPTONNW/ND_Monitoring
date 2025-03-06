@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorate="~{layouts/layout.html}">
+<head>
+    <meta charset="UTF-8">
+    <title>사용자 리스트</title>
+</head>
+<body>
+<div class="content mt-5" layout:fragment="content">
+    <div class="container users_container">
+        <br>
+        <div class="search_box">
+            <div class="d-flex justify-content-start" style="margin-left: 20px;margin-top: 15px;">
+                <select class="form-select" style="width: 200px;">
+                    <option value="name">이름</option>
+                    <option value="company">소속</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" style="width: 300px;" class="form-control form-control-lg" placeholder="검색어 입력" required>&nbsp;
+                <button class="btn btn-dark" style="width: 250px;font-size: 20px;font-weight: bold;">검 색</button>
+                <a th:href="@{/users/createUser}" class="btn btn-dark ms-auto" style="width: 100px;font-size:20px;font-weight: bold;margin-right: 15px;">등 록</a>
+            </div>
+        </div>
+        <br>
+        <div class="user_listbox">
+            <table class="table user_tde">
+                <thead>
+                <tr>
+                    <th style="background-color: #d7d4d4">순번</th>
+                    <th style="background-color: #d7d4d4">아이디</th>
+                    <th style="background-color: #d7d4d4">이름</th>
+                    <th style="background-color: #d7d4d4">소속</th>
+                    <th style="background-color: #d7d4d4">권한여부</th>
+                    <th style="background-color: #d7d4d4">등록일시</th>
+                    <th style="background-color: #d7d4d4">비고</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><a href="#">leptonnw</a></td>
+                    <td>장선호</td>
+                    <td>ND Tech</td>
+                    <td>관리자</td>
+                    <td>등록일시</td>
+                    <td>개발자</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

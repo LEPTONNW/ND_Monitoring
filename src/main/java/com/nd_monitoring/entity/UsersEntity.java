@@ -33,6 +33,11 @@ public class UsersEntity {
     @NotEmpty(message = "비밀번호 입력은 필수 입니다.")
     private String pass;
 
+    //사용자이름
+    @Column
+    @NotEmpty(message = "사용자 이름 입력은 필수 입니다.")
+    private String name;
+
     //상호명
     @Column
     @NotEmpty(message = "사업자 명은 필수 입니다.")
@@ -42,4 +47,12 @@ public class UsersEntity {
     @Column
     @CreatedDate
     private LocalDate regdate;
+
+    //권한
+    @Column
+    private String permission;
+
+    //특이사항
+    @Column
+    private String notice;
 }

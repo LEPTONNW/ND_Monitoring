@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorate="~{layouts/layout.html}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="csrf-token" th:content="${_csrf.token}">
+    <title>회 원 생 성</title>
+    <script th:src="@{/js/createuser.js}"></script>
+</head>
+<body>
+<div class="content mt-5" layout:fragment="content">
+    <br><br>
+
+    <div class="container create_container">
+        <div class="table_form">
+            <br>
+            <div class="d-flex justify-content-center">
+                <h1 style="font-weight: bold;">사용자 등록</h1>
+            </div>
+            <br><hr><br><br>
+            <div class="d-flex justify-content-center tde_form">
+                <div class="tde_border">
+                    <table class="tde" cellspacing="10" cellpadding="10">
+                        <thead>
+                        <tr>
+                            <th>
+                                아이디 <span class="chk_ico">✓</span>
+                            </th>
+                            <td>
+                                <input id="userid" type="text" class="form-control" placeholder="2자 ~ 10자">
+                            </td>
+
+                            <th>
+                                <span>비밀번호 <span class="chk_ico">✓</span></span>
+                            </th>
+                            <td>
+                                <input id="pass" type="password" class="form-control" placeholder="비밀번호 입력">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <span>이름 <span class="chk_ico">✓</span></span>
+                            </th>
+                            <td>
+                                <input id="name" type="text" class="form-control" placeholder="이름 입력">
+                            </td>
+                            <th>
+                                <span>사용자 구분 <span class="chk_ico">✓</span></span>
+                            </th>
+                            <td>
+                                <span style="font-weight: bold;">개인 <input id="ra1" type="radio" class="form-check-input radio_in" value="personal" name="permission" required checked>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    관리자 <input id="ra2" type="radio" class="form-check-input radio_in" value="manager" name="permission" required></span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <span>소속 <span class="chk_ico">✓</span></span>
+                            </th>
+                            <td colspan="3">
+                                <input id="company" type="text" class="form-control" placeholder="소속 입력">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>
+                                <span>특이사항</span>
+                            </th>
+                            <td colspan="3">
+                                <input id="notice" type="text" class="form-control" placeholder="비고">
+                            </td>
+                        </tr>
+                        </thead>
+                    </table>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="d-flex justify-content-between">
+            <button type="submit"  onclick = "reset()" class="btn btn-default me-2 submit_btn" style=" width: 175px; height: 60px; font-size: 20px;">초기화 <i class="bi bi-arrow-counterclockwise"></i> </button>
+            <button type="submit" onclick="createuser()" class="btn btn-default me-1 submit_btn" style=" width: 175px; height: 60px; font-size: 20px;">등록 <i class="bi bi-floppy"></i></button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,18 +1,17 @@
-body {
-    font-family: 'NanumGothicBold';
-}
+
 
 .sidebar {
     width: 300px;
-    position: absolute;
-    height: 100%;
-    border: 1px solid transparent;
+    position: fixed;  /* absolute → fixed 로 변경 */
+    height: 100vh;  /* 화면 전체 높이로 변경 */
+    top: 0;  /* 상단부터 시작 */
     left: -300px;
     background: lightgray;
-    z-index: 0;
+    z-index: 1000;
     opacity: 0.95;
-    transition: left 0.15s ease-in-out; /* 부드럽게 슬라이드 효과 */
+    transition: left 0.15s ease-in-out;
 }
+
 
 .sidebar.active {
     left: 0; /* 클래스 추가 시 사이드바가 나타남 */
@@ -25,11 +24,30 @@ body {
 }
 
 .square_box {
-    width: 95%;
-    height: 25%;
+    width: 270px;
+    height: 230px;
     margin: 0 auto;
     border : 1px solid transparent;
     border-radius: 20px;
     background: white;
+}
+
+.nav-box {
+    width: 270px;
+    height: 230px;
+    margin: 0 auto;
+    background: white;
+}
+
+.nav li {
+    background-color: white;
+    height: 58px;
+    border-bottom: 1px solid black;
+    font-size:20px;
+    font-weight: bold;
+}
+
+.nav li:hover {
+    background-color: #6c757d;
 }
 

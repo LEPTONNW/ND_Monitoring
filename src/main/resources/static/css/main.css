@@ -1,0 +1,223 @@
+
+
+/*
+로그인 페이지 CSS 시작점
+*/
+.tde {
+    text-align: left;
+    border-collapse: separate;  /* 변경: separate로 설정 */
+    border-spacing: 0; /* 추가: 테두리 간격 없애기 */
+    border: 1px solid #9b9b9b;
+    border-radius: 10px; /* 추가: 둥근 모서리 적용 */
+    overflow: hidden; /* 추가: 내부 요소도 모서리에 맞추기 */
+    font-size: 25px;
+    background-color: white;
+}
+
+/* 첫 번째 행의 첫 번째 th (왼쪽 위) */
+.tde tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+
+/* 첫 번째 행의 마지막 th 또는 td (오른쪽 위) */
+.tde tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
+
+/* 마지막 행의 첫 번째 td (왼쪽 아래) */
+.tde tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+.tde th {
+    width: 300px;
+    background-color: rgba(220, 220, 220, 0.75);
+    color:black;
+    justify-content: center;
+}
+
+.tde tr {
+
+}
+
+.tde td {
+    width: 300px;
+    border-bottom: 1px solid black;
+}
+
+.tde th {
+    border-bottom: 1px solid black;
+}
+
+
+.table_form {
+    width: 100%;
+    height: 100%;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgba(236, 236, 236, 0.62);
+}
+
+.tde_border {
+}
+
+.form-control {
+    border: 1px solid #6c757d;
+}
+
+.submit_btn {
+    background-color: #414141;
+    color:white;
+    font-weight: bold;
+}
+
+.submit_btn:hover {
+    background-color: lightgray;
+    color:black;
+}
+
+.radio_in {
+    border: 1px solid black;
+}
+
+.chk_ico {
+    color:red;
+}
+
+body {
+    font-family:'NanumGothicBold';
+}
+/*
+로그인 페이지 CSS 끝점
+*/
+
+
+
+/*
+메인페이지 CSS 시작점
+ */
+.mainL{
+    border-radius: 5px ;
+    border: 1px solid black;
+    width : 660px;
+    height: 680px;
+    font-size: 15px;
+    color: black;
+}
+.alarmMainBox{
+    border-radius: 10px;
+    background: lightgray;
+    width: 600px;
+    height: 300px;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top:15px;
+}
+.alarm-box{
+    height: 50px;
+    width: 500px;
+    border-radius: 5px;
+    background-color: #ad9ebe;
+
+
+}
+.num{
+    color: blue;
+    border-radius: 5px;
+    background-color: #b0cbf6;
+    width: 30px;
+    height: 30px;
+    float: right;
+}
+.errorListBox{
+    border-radius: 5px;
+    width: 600px;
+    height: 300px;
+    font-size: 15px;
+    margin-left: 20px;
+    margin-top : 5px;
+    background: lightgray;
+}
+.errorInBox{
+    margin : 10px;
+}
+.errorListBox table tr {
+    border-bottom: 1px dotted rgb(128, 128, 128);
+}
+.errorListBox table tr a{
+        color: black;
+        text-decoration:none;
+}
+.mainR{
+    border-radius: 5px ;
+    border: 1px solid black;
+    width : 660px;
+    height: 680px;
+    font-size: 15px;
+    color: black;
+    margin-left: 10px;
+}
+
+/*
+메인페이지 CSS 끝점
+ */
+
+
+
+/*
+사용자 리스트 CSS 시작점
+*/
+.users_container {
+    background-color: #f1f1f1;
+    min-height: 1750px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+}
+
+.search_box {
+    width: 1200px;
+    height: 80px;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 20px;
+}
+
+.user_listbox {
+    width: 1200px;
+    height: 1550px;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 20px;
+}
+
+.user_tde {
+    border-radius: 20px;
+    border: 1px solid transparent;
+    border-collapse: collapse;
+}
+.user_tde tr {
+    border-bottom: 1px solid black;
+}
+
+/* 첫 번째 행의 첫 번째 th (왼쪽 위) */
+.user_tde tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+
+/* 첫 번째 행의 마지막 th 또는 td (오른쪽 위) */
+.user_tde tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
+
+/* 마지막 행의 첫 번째 td (왼쪽 아래) */
+.user_tde tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+
+/*
+사용자 리스트 CSS 끝점
+*/

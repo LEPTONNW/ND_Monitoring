@@ -50,12 +50,7 @@ public class SecurityConfig {
                 .exceptionHandling(exceptionHandling -> exceptionHandling.accessDeniedHandler(accDeniedHandle)) //특정페이지에 권한문제로 접속하지 못할경우 accDeineHandle 클래스 실행
                 .csrf(csrf -> csrf
                         .ignoringRequestMatchers(
-                                "/board/annoncreate_pro",
-                                "/api/buyboxdelete",
-                                "/api/downloadzip",
-                                "/api/extract_addr",
-                                "/dcapi/downloadzip",
-                                "/dcapi/extract_addr"
+                                "/api/xxx"
 
 
                         ) // 특정 경로에 대해 CSRF 비활성화
