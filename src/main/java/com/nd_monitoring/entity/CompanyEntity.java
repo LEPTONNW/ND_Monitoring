@@ -44,5 +44,4 @@ public class CompanyEntity {
     @Column
     @CreatedDate
     private LocalDate regdate;
-
 }
