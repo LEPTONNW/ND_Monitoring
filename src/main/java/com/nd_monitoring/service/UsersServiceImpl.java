@@ -8,9 +8,15 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -68,4 +74,31 @@ public class UsersServiceImpl implements UsersService {
             throw new CustomException("사용자를 찾을 수 없습니다.");
         }
     }
-}
+
+    @Override
+    public Page<UsersDTO> getuserList(int page, int size, String searchType, String keyword) {
+
+        Pageable pageable = PageRequest.of(page, size);
+        Page<UsersEntity> usersEntities;
+        if (searchType != null && keyword != null && !keyword.isEmpty()) {
+            // 검색 기능 추가
+            if ((searchType).equals("name")) {
+                usersEntities = usersRepository.findByNameContaining(keyword, pageable);
+            } else if ((searchType).equals("company")) {
+                usersEntities = usersRepository.findByCompanyContaining(keyword, pageable);
+            } else {
+                usersEntities = usersRepository.findAll(pageable);
+            }
+        } else {
+            // 검색어가 없을 때는 전체 리스트 출력
+            usersEntities = usersRepository.findAll(pageable);
+        }
+
+        return usersEntities.map(entity -> modelMapper.map(entity, UsersDTO.class));
+    }
+
+
+    }
+
+
+

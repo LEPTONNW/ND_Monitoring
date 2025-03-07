@@ -19,8 +19,8 @@
                     <option value="company">소속</option>
                 </select>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="text" style="width: 300px;" class="form-control form-control-lg" placeholder="검색어 입력" required>&nbsp;
-                <button class="btn btn-dark" style="width: 250px;font-size: 20px;font-weight: bold;">검 색</button>
+                <input type="text" style="width: 450px;" class="form-control form-control-lg" placeholder="검색어 입력" required>&nbsp;
+                <button class="btn btn-dark" id="searchButton" style="width: 100px;font-size: 20px;font-weight: bold;">검 색</button>
                 <a th:href="@{/users/createUser}" class="btn btn-dark ms-auto" style="width: 100px;font-size:20px;font-weight: bold;margin-right: 15px;">등 록</a>
             </div>
         </div>
@@ -42,6 +42,9 @@
                 </tbody>
             </table>
         </div>
+        <br>
+        <!--버튼처리 -->
+        <div id="pagination"style="display: block" class="d-flex justify-content-center"></div>
     </div>
 </div>
 </body>

@@ -5,11 +5,13 @@ import com.nd_monitoring.dto.UsersDTO;
 import com.nd_monitoring.service.UsersService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -69,4 +71,14 @@ public class ApiController {
         }
     }
     //레이아웃 REST요청 끝점
+
+
+    @GetMapping("/userlist")
+    public Page<UsersDTO> getuserList(@RequestParam(defaultValue = "0") int page,
+                                      @RequestParam(defaultValue = "10") int size,
+                                      @RequestParam(defaultValue = "", required = false)String searchType,
+                                      @RequestParam(defaultValue = "", required = false)String keyword){
+        return usersService.getuserList(page,size,searchType,keyword);
+    }
+
 }
