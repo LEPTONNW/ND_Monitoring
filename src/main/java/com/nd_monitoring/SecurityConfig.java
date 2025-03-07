@@ -11,6 +11,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebSecurity
@@ -27,7 +29,7 @@ public class SecurityConfig {
 
                 .authorizeHttpRequests(authorize -> authorize
                         //기타 정적 리소스 경로에 대해 허용
-                        .requestMatchers("/resources/**", "/static/**").permitAll()
+                        .requestMatchers("/resources/**", "/static/**", "/fonts/**").permitAll()
                         .requestMatchers("/**" //모든페이지 허용
                         ).permitAll()
                         .requestMatchers("/users/**").authenticated() //인증된 사용자만 접근 가능함
@@ -50,7 +52,7 @@ public class SecurityConfig {
                 .exceptionHandling(exceptionHandling -> exceptionHandling.accessDeniedHandler(accDeniedHandle)) //특정페이지에 권한문제로 접속하지 못할경우 accDeineHandle 클래스 실행
                 .csrf(csrf -> csrf
                         .ignoringRequestMatchers(
-                                "/api/xxx"
+                                "/fonts/**"
 
 
                         ) // 특정 경로에 대해 CSRF 비활성화

@@ -6,9 +6,10 @@
 <head>
     <meta charset="UTF-8">
     <title>사용자 리스트</title>
+    <script th:src="@{/js/listuser.js}" defer></script>
 </head>
 <body>
-<div class="content mt-5" layout:fragment="content">
+<div class="content mt-5 mb-5" layout:fragment="content">
     <div class="container users_container">
         <br>
         <div class="search_box">
@@ -37,16 +38,7 @@
                     <th style="background-color: #d7d4d4">비고</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td><a href="#">leptonnw</a></td>
-                    <td>장선호</td>
-                    <td>ND Tech</td>
-                    <td>관리자</td>
-                    <td>등록일시</td>
-                    <td>개발자</td>
-                </tr>
+                <tbody id="boardTableBody">
                 </tbody>
             </table>
         </div>

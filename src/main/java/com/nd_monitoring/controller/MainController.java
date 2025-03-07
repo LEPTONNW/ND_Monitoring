@@ -23,4 +23,9 @@ public class MainController {
     public String login(){
         return "login";
     }
+
+    @GetMapping("/companylist")
+    public String companylist() {
+        return "companylist";
+    }
 }
