@@ -5,72 +5,63 @@
       layout:decorate="~{layouts/layout.html}">
 <head>
     <meta charset="UTF-8">
+    <!-- Chart JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script th:src="@{/js/main.js}" defer></script>
     <title>메인페이지</title>
 </head>
 <body>
-<div class="content mt-4" layout:fragment="content">
-    <div class="container mt-4" style="margin-left: 150px">
-        <div class="row">
-            <!-- 왼쪽 영역 -->
-            <div class="col-md-6 mainL">
-                <h3>실시간 사업소 현황</h3>
-               <div class="row alarmMainBox">
-                   <div class="alarm-box justify-content-start">
-                       <span>금일 날씨 문제 예상 사업소</span><span class="num">00</span>
-                   </div>
-                   <div class="alarm-box justify-content-start">
-                       <span>현재 사업소별 이상발생 </span><span class="num">00</span>
-                   </div>
-                   <div class="alarm-box justify-content-start">
-                       <span>금일 날씨 문제 사업소</span><span class="num">00</span>
-                   </div>
-                   <div class="alarm-box justify-content-start">
-                       <span>금일 날씨 문제 사업소</span><span class="num">00</span>
-                   </div>
-               </div>
-               <div class="row errorListBox">
-                   <div class="d-flex justify-content-between align-items-center">
-                       <h3>미확인 오류 리스트 확인</h3>
-                       <i class="bi bi-plus-square"></i>
-                   </div>
-                   <table class="errorInBox">
-
-                       <tr>
-                           <td>번호</td>
-                           <td>사업소명(지역)</td>
-                           <td>오류 발생 시간</td>
-                       </tr>
-                       <tr>
-                           <td>testNum01</td>
-                           <td><a href="#">testPlace01</a></td>
-                           <td>testTime01</td>
-                       </tr>
-                       <tr>
-                           <td>testNum02</td>
-                           <td><a href="#">testPlace02</a></td>
-                           <td>testTime02</td>
-                       </tr>
-                       <tr>
-                           <td>testNum03</td>
-                           <td><a href="#">testPlace03</a></td>
-                           <td>testTime03</td>
-                       </tr>
-                       <tr>
-                           <td>testNum04</td>
-                           <td><a href="#">testPlace04</a></td>
-                           <td>testTime04</td>
-                       </tr>
-                   </table>
-               </div>
+<div class="content main_content" layout:fragment="content">
+    <div class="main_div1">
+        <div class="main_div1_1">
+            <div class="status_div">
+                <h3 style="font-weight: bold;margin:10px;color:#000000;"><i class="bi bi-postcard"></i> 현 황 판</h3>
             </div>
-            <!-- 오른쪽 영역 -->
-            <div class="col-md-6 mainR d-flex justify-content-end align-items-start">
-                <div>
-                </div>
+            <br>
+            <div class="d-flex justify-content-center">
+                <canvas id="myChart"></canvas> <!-- 차트를 표시할 캔버스 -->
+            </div>
+
+            <div class="chart_bottom">
+
+            </div>
+        </div>
+
+        <div class="main_div1_2">
+            <div class="companylist_min">
+                <table class="table com_min_tde">
+                    <thead>
+                    <tr>
+                        <th >번호</th>
+                        <th>상호명</th>
+                        <th>관리자</th>
+                        <th>사용중장치</th>
+                        <th>활성여부</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>ND테크</td>
+                        <td>장선호</td>
+                        <td>분사,열선</td>
+                        <td>Y</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-
+    <div class="main_div2">
+        <iframe
+        class="maps"
+        loading="lazy"
+        allowfullscreen
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA55kENX6zixxy8hhgiPiRUFtYXfXpNHrc&q=서울특별시
+        &region=KR&language=ko">
+        </iframe>
+    </div>
 </div>
 </body>
 </html>

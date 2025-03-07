@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      layout:decorate="~{layouts/layout.html}">
+<head>
+    <meta charset="UTF-8">
+    <title>거래처 리스트</title>
+</head>
+<body>
+<div class="content mt-5 mb-5" layout:fragment="content">
+    <div class="container users_container">
+        <br>
+        <div class="search_box">
+            <div class="d-flex justify-content-start" style="margin-left: 20px;margin-top: 15px;">
+                <select class="form-select" style="width: 200px;">
+                    <option value="name">이름</option>
+                    <option value="company">소속</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" style="width: 450px;" class="form-control form-control-lg" placeholder="검색어 입력" required>&nbsp;
+                <button class="btn btn-dark" id="searchButton" style="width: 100px;font-size: 20px;font-weight: bold;">검 색</button>
+                <a th:href="@{/users/createUser}" class="btn btn-dark ms-auto" style="width: 100px;font-size:20px;font-weight: bold;margin-right: 15px;">등 록</a>
+            </div>
+        </div>
+        <br>
+        <div class="user_listbox">
+            <table class="table user_tde">
+                <thead>
+                <tr>
+                    <th style="background-color: #d7d4d4">순번</th>
+                    <th style="background-color: #d7d4d4">상호명</th>
+                    <th style="background-color: #d7d4d4">관리자명</th>
+                    <th style="background-color: #d7d4d4">분사장치</th>
+                    <th style="background-color: #d7d4d4">열선장치</th>
+                    <th style="background-color: #d7d4d4">활성여부</th>
+                    <th style="background-color: #d7d4d4">등록일시</th>
+                </tr>
+                </thead>
+                <tbody id="boardTableBody">
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <!--버튼처리 -->
+        <div id="pagination" style="display: block" class="d-flex justify-content-center"></div>
+    </div>
+</div>
+</body>
+</html>

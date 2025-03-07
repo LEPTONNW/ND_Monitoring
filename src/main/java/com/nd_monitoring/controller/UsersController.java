@@ -21,4 +21,9 @@ public class UsersController {
         return "users/createUser";
     }
 
+    @GetMapping("/particularUser")
+    public String particulUser(){
+        return "users/particularUser";
+    }
+
 }

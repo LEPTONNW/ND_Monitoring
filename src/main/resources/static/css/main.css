@@ -86,7 +86,7 @@
 }
 
 body {
-    font-family:'NanumGothicBold';
+    font-family: 'NanumGothicBold', sans-serif;
 }
 /*
 로그인 페이지 CSS 끝점
@@ -97,67 +97,112 @@ body {
 /*
 메인페이지 CSS 시작점
  */
-.mainL{
-    border-radius: 5px ;
-    border: 1px solid black;
-    width : 660px;
-    height: 680px;
-    font-size: 15px;
-    color: black;
+.main_content {
+    background-color: #d5d5d5;
+    width: 100%;
+    height: 100%;
+    max-height: 1000px;
+    min-height: 1000px;
+    display: flex;
 }
-.alarmMainBox{
+
+.main_div1 {
+    margin-left: 80px;
+    margin-top: 50px;
+    width: 45%;
+    height: 90%;
+    min-width: 400px;
+    min-height: 900px;
+    border: 1px solid transparent;
+}
+
+.status_div {
+    background-color: rgb(154, 168, 162);
+    border: 1px solid transparent;
+    border-bottom: 5px solid rgb(73, 59, 84);
+    border-radius: 10px 10px 0 0;
+}
+
+.status_sp {
+    font-size:20px;
+}
+
+
+.main_div1_1 {
+    min-width: 400px;
+    min-height: 440px;
+    max-height: 440px;
+    border: 1px solid transparent;
     border-radius: 10px;
-    background: lightgray;
-    width: 600px;
-    height: 300px;
-    font-size: 20px;
-    margin-left: 20px;
-    margin-top:15px;
+    background-color: rgb(241, 255, 234);
+    box-shadow: 2px 2px 2px grey;
 }
-.alarm-box{
-    height: 50px;
-    width: 500px;
-    border-radius: 5px;
-    background-color: #ad9ebe;
 
+.chart_bottom {
 
 }
-.num{
-    color: blue;
-    border-radius: 5px;
-    background-color: #b0cbf6;
-    width: 30px;
-    height: 30px;
-    float: right;
+
+.main_div1_2 {
+    margin-top: 20px;
+    min-width: 400px;
+    min-height: 440px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 2px 2px 2px grey;
 }
-.errorListBox{
-    border-radius: 5px;
-    width: 600px;
-    height: 300px;
-    font-size: 15px;
+
+.main_div2 {
     margin-left: 20px;
-    margin-top : 5px;
-    background: lightgray;
+    margin-top: 50px;
+    width: 45%;
+    height: 90%;
+    max-width: 45%;
+    max-height: 90%;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    min-width: 400px;
+    min-height: 900px;
+    background-color: white;
+    box-shadow: 2px 2px 2px grey;
 }
-.errorInBox{
-    margin : 10px;
+
+.maps {
+    border: 1px solid transparent;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 450px;
 }
-.errorListBox table tr {
-    border-bottom: 1px dotted rgb(128, 128, 128);
+
+#myChart {
+    width: 100%;
+    height: 310px;
 }
-.errorListBox table tr a{
-        color: black;
-        text-decoration:none;
+
+.companylist_min {
+
 }
-.mainR{
-    border-radius: 5px ;
-    border: 1px solid black;
-    width : 660px;
-    height: 680px;
-    font-size: 15px;
-    color: black;
-    margin-left: 10px;
+
+.com_min_tde {
+    text-align: center;
 }
+
+.com_min_tde thead th {
+    background-color: rgb(154, 168, 162);
+    border: 1px solid transparent;
+    border-bottom: 5px solid black;
+}
+
+/* 첫 번째 행의 첫 번째 th (왼쪽 위) */
+.com_min_tde thead tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+
+/* 첫 번째 행의 마지막 th 또는 td (오른쪽 위) */
+.com_min_tde thead tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
+
 
 /*
 메인페이지 CSS 끝점
@@ -166,57 +211,68 @@ body {
 
 
 /*
-사용자 리스트 CSS 시작점
+사용자,거래처 리스트 CSS 시작점
 */
 .users_container {
     background-color: #f1f1f1;
     min-height: 1750px;
     border: 1px solid transparent;
     border-radius: 20px;
+    width: 100%;  /* 화면 크기에 맞추기 */
+    max-width: 1200px; /* 최대 너비 제한 */
+    margin: 0 auto; /* 가운데 정렬 */
+    box-shadow: 1px 1px 2px #4b4b4b;
 }
 
 .search_box {
-    width: 1200px;
-    height: 80px;
+    width: 100%;  /* 부모 크기에 맞추기 */
+    max-width: 1100px; /* 최대 너비 제한 */
+    height: 80px; /* 높이 자동 조정 */
     margin: 0 auto;
     background-color: white;
     border: 1px solid transparent;
     border-radius: 20px;
+    box-shadow: 1px 1px 2px #4b4b4b;
 }
 
 .user_listbox {
-    width: 1200px;
-    height: 1550px;
+    width: 100%;  /* 부모 크기에 맞추기 */
+    max-width: 1100px; /* 최대 너비 제한 */
+    height: auto; /* 높이 자동 조정 */
     margin: 0 auto;
-    background-color: white;
+    background-color: #d7d4d4;
     border: 1px solid transparent;
     border-radius: 20px;
+    box-shadow: 1px 1px 2px #4b4b4b;
 }
 
 .user_tde {
     border-radius: 20px;
     border: 1px solid transparent;
     border-collapse: collapse;
+    border-spacing: 0;
 }
+
 .user_tde tr {
     border-bottom: 1px solid black;
 }
 
 /* 첫 번째 행의 첫 번째 th (왼쪽 위) */
 .user_tde tr:first-child th:first-child {
-    border-top-left-radius: 10px;
+    border-top-left-radius: 20px;
+
 }
 
 /* 첫 번째 행의 마지막 th 또는 td (오른쪽 위) */
 .user_tde tr:first-child th:last-child {
-    border-top-right-radius: 10px;
+    border-top-right-radius: 20px;
 }
 
-/* 마지막 행의 첫 번째 td (왼쪽 아래) */
+/* 마지막 행의 첫 번째 td (왼쪽 아래)
 .user_tde tr:last-child td:first-child {
-    border-bottom-left-radius: 10px;
+    border-bottom-left-radius: 20px;
 }
-
+*/
 
 /*
 사용자 리스트 CSS 끝점
